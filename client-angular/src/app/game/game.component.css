@@ -1,0 +1,143 @@
+/* Font for SCORE */
+@font-face {
+  font-family: "Gameplay";
+  src: url("~/assets/Gameplay.ttf");
+}
+
+/* Ecran contenant le jeu */
+.ecran {
+  margin: 50px;
+  max-height: 700px;
+  height: 700px;
+  border: none;
+}
+
+/* Image chargée uniquement lorsque le jeu n'est pas lancé */
+.background {
+  background-image: url("~/assets/menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BOUTON JOUER*/
+
+a{
+  padding: 100px 50px 100px 50px;
+}
+
+.button:after, .button:before {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button {
+  background-size: 100%;
+  background-image: linear-gradient(to right, red, blue);
+  border-radius: 1.5em;
+  color: rgb(0,275,71);
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  cursor: pointer;
+  font-family: "Gameplay";
+}
+
+.button:after {
+  background: rgb(0,275,71);
+  content: "";
+  height: 2px;
+  opacity: 0;
+}
+
+.button:hover {
+  -webkit-animation: glitch 750ms infinite;
+}
+
+.button:hover:after {
+  -webkit-animation: scan 2s infinite;
+  opacity: 1;
+}
+
+@-webkit-keyframes glitch {
+  0% {
+    transform: skewX(0deg);
+  }
+  5% {
+    transform: skewX(2deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: skewX(0deg);
+    opacity: 1;
+  }
+  15% {
+    transform: skewX(-5deg);
+    opacity: 0.75;
+  }
+  20% {
+    transform: skewX(0deg);
+    opacity: 1;
+  }
+  45% {
+    transform: skewX(3deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: skewX(0deg);
+    opacity: 1;
+  }
+  55% {
+    transform: skewX(0deg);
+    opacity: 0.75;
+  }
+  60% {
+    transform: skewX(0deg);
+    opacity: 1;
+  }
+  75% {
+    transform: skewX(2deg);
+  }
+  80% {
+    transform: skewX(0deg);
+  }
+  85% {
+    transform: skewX(-8deg);
+    opacity: 0.75;
+  }
+  90% {
+    transform: skewX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: skewX(0deg);
+  }
+}
+
+@-webkit-keyframes scan {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 97%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
